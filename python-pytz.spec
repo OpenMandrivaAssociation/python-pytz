@@ -1,19 +1,19 @@
-%define module pytz
-%define name python-%{module}
-%define version 2008h
-%define release %mkrel 1
+%define module	pytz
+%define name	python-%{module}
+%define version	2008i
+%define release	%mkrel 1
 
-Summary: World timezone definitions for Python
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{module}-%{version}.tar.lzma
-License: MIT
-Group: Development/Python
-Url: http://pytz.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: python-devel >= 2.3
-BuildArch: noarch
+Summary:	World timezone definitions for Python
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source0:	%{module}-%{version}.tar.lzma
+License:	MIT
+Group:		Development/Python
+Url:		http://pytz.sourceforge.net/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	python-devel >= 2.3
+BuildArch:	noarch
 
 %description
 pytz brings the Olson tz database into Python. This library allows
