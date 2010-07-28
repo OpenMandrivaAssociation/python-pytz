@@ -29,7 +29,7 @@ Amost all (over 540) of the Olson timezones are supported.
 
 %install
 %__rm -rf %{buildroot}
-%__python setup.py install --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
 
 %clean
 %__rm -rf %{buildroot}
