@@ -1,13 +1,13 @@
 %define module	pytz
 %define name	python-%{module}
-%define version	2010o
+%define version	2011b
 %define release	%mkrel 1
 
 Summary:	World timezone definitions for Python
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{module}-%{version}.tar.bz2
+Source0:	%{module}-%{version}.zip
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
