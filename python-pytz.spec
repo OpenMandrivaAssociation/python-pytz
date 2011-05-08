@@ -1,7 +1,7 @@
 %define module	pytz
 %define name	python-%{module}
-%define version	2011e
-%define release	%mkrel 2
+%define version	2011g
+%define release	%mkrel 1
 
 Summary:	World timezone definitions for Python
 Name:		%{name}
