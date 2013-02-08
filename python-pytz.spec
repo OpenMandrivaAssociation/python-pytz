@@ -1,18 +1,14 @@
 %define module	pytz
-%define name	python-%{module}
-%define version	2011h
-%define release	%mkrel 1
 
 Summary:	World timezone definitions for Python
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		python-%{module}
+Version:	2011h
+Release:	2
 Source0:	%{module}-%{version}.tar.bz2
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	python-devel >= 2.3
+%py_requires -d
 BuildArch:	noarch
 
 %description
@@ -28,19 +24,16 @@ Amost all (over 540) of the Olson timezones are supported.
 %setup -q -n %{module}-%{version}
 
 %install
-%__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 
-%clean
-%__rm -rf %{buildroot}
-
-%files -f FILELIST
-%defattr(-,root,root)
+%files
+%{py_sitedir}/*
 %doc *.txt
 
-
-
 %changelog
+* Fri Feb  8 2013 pcpa <paulo.cesar.pereira.de.andrade@gmail.com> - 2011h-2
+- Rebuild due to python modules breakage.
+
 * Mon Jun 27 2011 Lev Givon <lev@mandriva.org> 2011h-1mdv2011.0
 + Revision: 687488
 - Update to 2011h.
