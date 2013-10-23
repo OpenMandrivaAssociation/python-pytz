@@ -58,8 +58,9 @@ popd
 
 %files -f python2/FILELIST.P2
 %doc python2/*.txt
-
+%{py_puresitedir}/%{module}-%{version}-*.egg-info
 
 %files -n python3-%{module} -f python3/FILELIST.P3
 %doc python3/*.txt
+%{py3_puresitedir}/%{module}-%{version}-*.egg-info
 
