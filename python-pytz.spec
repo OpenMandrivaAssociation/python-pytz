@@ -4,13 +4,13 @@ Summary:	World timezone definitions for Python
 Name:		python-%{module}
 Version:	2013b
 Release:	1
-Source0:	http://pypi.python.org/packages/source/p/pytz/pytz-%{version}.tar.bz2
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
-BuildRequires:	python-devel >= 2.3
-BuildRequires:  python3-devel
+Source0:	http://pypi.python.org/packages/source/p/pytz/pytz-%{version}.tar.bz2
 BuildArch:	noarch
+BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 
 %description
 pytz brings the Olson tz database into Python. This library allows
@@ -22,9 +22,9 @@ Reference (datetime.tzinfo).
 Amost all (over 540) of the Olson timezones are supported.
 
 %package -n python3-%{module}
-Summary:        World timezone definitions for Python3
-Group:          Development/Python
-Requires:       python3
+Summary:	World timezone definitions for Python3
+Group:		Development/Python
+Requires:	python3
 
 %description -n python3-%{module}
 pytz brings the Olson tz database into Python. This library allows
@@ -53,8 +53,6 @@ sed -i 's/.*egg-info$//' FILELIST.P3
 sed -i 's/.*pyc$//' FILELIST.P3
 find %{buildroot}%{py3_puresitedir} -name "*pyc" -delete
 popd
-
-%clean
 
 %files -f python2/FILELIST.P2
 %doc python2/*.txt
