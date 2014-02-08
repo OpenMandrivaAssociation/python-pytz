@@ -3,7 +3,7 @@
 Summary:	World timezone definitions for Python
 Name:		python-%{module}
 Version:	2011h
-Release:	2
+Release:	3
 Source0:	%{module}-%{version}.tar.bz2
 License:	MIT
 Group:		Development/Python
