@@ -8,7 +8,7 @@ Source0:	%{module}-%{version}.tar.bz2
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
-%py_requires -d
+BuildRequires:  pkgconfig(python)
 BuildArch:	noarch
 
 %description
