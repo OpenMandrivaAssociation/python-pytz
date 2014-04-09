@@ -1,9 +1,10 @@
 %define module	pytz
 
 Summary:	World timezone definitions for Python
+
 Name:		python-%{module}
-Version:	2013b
-Release:	5
+Version:	2014.2
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
@@ -23,6 +24,7 @@ Amost all (over 540) of the Olson timezones are supported.
 
 %package -n python3-%{module}
 Summary:	World timezone definitions for Python3
+
 Group:		Development/Python
 Requires:	python3
 
@@ -61,4 +63,5 @@ popd
 %files -n python3-%{module} -f python3/FILELIST.P3
 %doc python3/*.txt
 %{py3_puresitedir}/%{module}-%{version}-*.egg-info
+
 
