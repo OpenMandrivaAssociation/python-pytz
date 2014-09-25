@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   pytz-2014.2.tar.bz2: 593bb6461710818ec0225dfe416515c35bafa98f
+sources:
+  pytz-2014.7.tar.bz2: 93f461ed9e3fb0e42becf8d7f09647daafc54d66
