@@ -4,7 +4,7 @@ Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
 Version:	2014.7
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
@@ -47,22 +47,22 @@ cp -r python2 python3
 %install
 pushd python2
 PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot} --record=FILELIST.P2
-sed -i 's/.*egg-info$//' FILELIST.P2
+sed -i 's/.*egg-info.*$//' FILELIST.P2
 popd
 
 pushd python3
 PYTHONDONTWRITEBYTECODE= %__python3 setup.py install --root=%{buildroot} --record=FILELIST.P3
-sed -i 's/.*egg-info$//' FILELIST.P3
+sed -i 's/.*egg-info.*$//' FILELIST.P3
 sed -i 's/.*pyc$//' FILELIST.P3
 find %{buildroot}%{py3_puresitedir} -name "*pyc" -delete
 popd
 
 %files -f python3/FILELIST.P3
 %doc python3/*.txt
-%dir %{py3_puresitedir}/%{module}-%{version}-*.egg-info
+%{py3_puresitedir}/%{module}-%{version}-*.egg-info
 
 %files -n python2-%{module} -f python2/FILELIST.P2
 %doc python2/*.txt
-%dir %{py2_puresitedir}/%{module}-%{version}-*.egg-info
+%{py2_puresitedir}/%{module}-%{version}-*.egg-info
 
 
