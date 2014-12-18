@@ -4,7 +4,7 @@ Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
 Version:	2014.7
-Release:	3
+Release:	4
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
@@ -12,6 +12,8 @@ Source0:	http://pypi.python.org/packages/source/p/pytz/pytz-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python-setuptools
+BuildRequires:	python2-setuptools
 %rename python3-pytz
 
 %description
