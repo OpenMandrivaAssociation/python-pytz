@@ -3,8 +3,8 @@
 Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
-Version:	2014.7
-Release:	4
+Version:	2014.9
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
