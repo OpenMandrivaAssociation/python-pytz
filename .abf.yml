@@ -1,2 +1,3 @@
 sources:
-  "pytz-2011h.tar.bz2": c94531a3124bb2cd3b4ac3015596c7f29989fb21
+  pytz-2011h.tar.bz2: c94531a3124bb2cd3b4ac3015596c7f29989fb21
+  pytz-2015.7.tar.gz: 4c2277e0e293ddda500aa0eda0d46d6b01062f40
