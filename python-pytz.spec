@@ -3,12 +3,12 @@
 Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
-Version:	2017.2
+Version:	2017.3
 Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pytz.sourceforge.net/
-Source0:	https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-%{version}.zip
+Source0:	https://pypi.python.org/packages/60/88/d3152c234da4b2a1f7a989f89609ea488225eaea015bc16fbde2b3fdfefa/pytz-%{version}.zip
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python3)
