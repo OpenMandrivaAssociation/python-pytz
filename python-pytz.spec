@@ -48,23 +48,19 @@ cp -r python2 python3
 
 %install
 pushd python2
-PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot} --record=FILELIST.P2
-sed -i 's/.*egg-info.*$//' FILELIST.P2
+PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot}
 popd
 
 pushd python3
-PYTHONDONTWRITEBYTECODE= %__python3 setup.py install --root=%{buildroot} --record=FILELIST.P3
-sed -i 's/.*egg-info.*$//' FILELIST.P3
-sed -i 's/.*pyc$//' FILELIST.P3
-find %{buildroot}%{py3_puresitedir} -name "*pyc" -delete
+PYTHONDONTWRITEBYTECODE= %__python3 setup.py install --root=%{buildroot}
 popd
 
-%files -f python3/FILELIST.P3
+%files
 %doc python3/*.txt
 %{py3_puresitedir}/%{module}-%{version}-*.egg-info
+%{py3_puresitedir}/pytz
 
-%files -n python2-%{module} -f python2/FILELIST.P2
+%files -n python2-%{module}
 %doc python2/*.txt
+%{py2_puresitedir}/pytz
 %{py2_puresitedir}/%{module}-%{version}-*.egg-info
-
-
