@@ -3,7 +3,7 @@
 Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
-Version:	2023.3
+Version:	2023.3.post1
 Release:	1
 License:	MIT
 Group:		Development/Python
