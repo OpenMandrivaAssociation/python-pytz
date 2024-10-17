@@ -7,7 +7,7 @@ Version:	2024.2
 Release:	1
 License:	MIT
 Group:		Development/Python
-Url:		http://pytz.sourceforge.net/
+Url:		https://pytz.sourceforge.net/
 # https://pypi.org/project/pytz/
 Source0:	https://files.pythonhosted.org/packages/source/p/pytz/pytz-%{version}.tar.gz
 BuildArch:	noarch
