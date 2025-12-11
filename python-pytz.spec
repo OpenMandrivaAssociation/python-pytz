@@ -4,15 +4,16 @@ Summary:	World timezone definitions for Python
 
 Name:		python-%{module}
 Version:	2025.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 Url:		https://pytz.sourceforge.net/
 # https://pypi.org/project/pytz/
 Source0:	https://files.pythonhosted.org/packages/source/p/pytz/pytz-%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	pkgconfig(python3)
-BuildRequires:	python-setuptools
+BuildRequires:	python
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildSystem:	python
 %rename python3-pytz
 
 %description
@@ -23,12 +24,6 @@ daylight savings, which you can read more about in the Python Library
 Reference (datetime.tzinfo).
 
 Amost all (over 540) of the Olson timezones are supported.
-
-%prep
-%autosetup -p1 -n %{module}-%{version}
-
-%install
-PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot}
 
 %files
 %doc *.txt
