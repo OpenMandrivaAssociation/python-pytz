@@ -1,19 +1,22 @@
 %define module	pytz
 
-Summary:	World timezone definitions for Python
 
-Name:		python-%{module}
-Version:	2025.2
+Name:		python-pytz
+Summary:	World timezone definitions for Python
+Version:	2026.2
 Release:	2
 License:	MIT
 Group:		Development/Python
-Url:		https://pytz.sourceforge.net/
+URL:		https://pythonhosted.org/pytz/
 # https://pypi.org/project/pytz/
-Source0:	https://files.pythonhosted.org/packages/source/p/pytz/pytz-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/p/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source100:	%{name}.rpmlintrc
+
+BuildSystem:	python
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
-BuildSystem:	python
+BuildRequires:	fdupes
 %rename python3-pytz
 
 %description
@@ -25,7 +28,15 @@ Reference (datetime.tzinfo).
 
 Amost all (over 540) of the Olson timezones are supported.
 
+%prep -a
+# Remove bundled egg-info
+rm -rf %{module}.egg-info
+
+%install -a
+%fdupes %{buildroot}%{python_sitelib}/%{module}/zoneinfo
+
 %files
-%doc *.txt
-%{py3_puresitedir}/%{module}-%{version}-*.egg-info
-%{py3_puresitedir}/pytz
+%doc README.rst
+%license LICENSE.txt
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}*.*-info
