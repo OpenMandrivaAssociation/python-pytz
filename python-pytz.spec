@@ -4,7 +4,7 @@
 Name:		python-pytz
 Summary:	World timezone definitions for Python
 Version:	2026.3.post1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 URL:		https://pythonhosted.org/pytz/
